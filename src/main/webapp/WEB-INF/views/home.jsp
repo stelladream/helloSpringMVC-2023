@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  Hello World
+     <a href="${pageContext.request.contextPath}/offers"> Show current offers</a>
   </body>
 </html>
