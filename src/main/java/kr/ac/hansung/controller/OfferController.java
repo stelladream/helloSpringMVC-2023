@@ -16,16 +16,13 @@ import java.util.List;
 @Controller
 public class OfferController {
 
-    // controller -> service -> dao
-    // controller -> model -> view
-
     @Autowired
     private OfferService offerService;
 
     @GetMapping("/offers")
     public  String showOffers(Model model) {
 
-        List<Offer> offers = offerService.getCurrent();
+        List<Offer> offers = offerService.getAllOffers();
         model.addAttribute("id_offers", offers);
 
         return "offers";
@@ -57,7 +54,7 @@ public class OfferController {
 
         //System.out.println(offer);
 
-        offerService.insert(offer);
+        offerService.insertOffer(offer);
 
         return "offercreated";
     }
